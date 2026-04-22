@@ -7,7 +7,6 @@
 
 int samples[SAMPLES]
 
-
 void setup() {
   Serial.begin(9600);
   analogReference(EXTERNAL);
@@ -36,7 +35,6 @@ void loop() {
 
   // temp conversion --> (1/T) = (1/T0) + (1/BCOEFF)*ln(R/R0)
 
-  
   tempConv = (avg / R0);
   tempConv = log(tempConv);
   tempConv /= BCOEFF;
