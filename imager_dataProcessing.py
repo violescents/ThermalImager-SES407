@@ -42,12 +42,14 @@ class masterController:
             output_folder="thermal_captures",
             images_per_set=15,
             total_sets=3,
-            image_delay=1.0):
+            image_delay=1.0,
+            temp_correction=2): #placeholder value !!!!!!!!!!!!!!!!!!!!!!):
         self.baud_rate = baud_rate
         self.timeout = timeout
         self.images_per_set = images_per_set
         self.total_sets = total_sets
         self.image_delay = image_delay
+        self.temp_correction = temp_correction
 
 # everytime script runs folder gets created with timestamp of script run
         run_stamp = datetime.now().strftime("%Y%m%d_%H%M%S")

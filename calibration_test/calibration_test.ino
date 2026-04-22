@@ -5,7 +5,7 @@
 #define BCOEFF 3950 // beta coeff of thermosistor
 #define SAMPLES 5 //how many samples to take so avg + smoother (more accurate) reading
 
-int samples[SAMPLES]
+int samples[SAMPLES];
 
 void setup() {
   Serial.begin(9600);
@@ -13,10 +13,10 @@ void setup() {
 }
 
 void loop() {
-  unit8_t i;
+  uint8_t i;
   float avg;
   float tempConv; // in K
-  float temp
+  float temp;
 
   //averaging out temp reads
   for (i =0; i < SAMPLES; i++){
@@ -42,6 +42,6 @@ void loop() {
   tempConv = 1/tempConv;
   temp = tempConv - 273/15; // temp in C
 
-  Serial.print("temp (C)"); Serial.println(temp)
+  Serial.print("temp (C)"); Serial.println(temp);
   delay (1000);
 }
