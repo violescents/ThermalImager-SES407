@@ -9,7 +9,7 @@ int samples[SAMPLES];
 
 void setup() {
   Serial.begin(9600);
-  analogReference(EXTERNAL);
+  //analogReference(EXTERNAL);
 }
 
 void loop() {
