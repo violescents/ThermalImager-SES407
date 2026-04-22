@@ -14,7 +14,7 @@ String command = "";
 
 
 void movein(){
-shutterServo.writeMicroseconds(1450);
+shutterServo.writeMicroseconds(1425);
 delay(50);
 shutterServo.writeMicroseconds(1500);
 }
@@ -47,13 +47,13 @@ void blinkCommand(){
 
 void closeShutter(){
     while (digitalRead(closeSwitch) == LOW) {
- //     Serial.println("switch is open");
+      //Serial.println("switch is open");
     movein();
-      delay(750);
+      //delay(750);
     }  
   if (digitalRead(closeSwitch) == HIGH ){
     blinkCommand();
-  //  Serial.println("switch is closed");
+    //Serial.println("switch is closed");
   }
 }
 
@@ -61,7 +61,7 @@ void openShutter(){
   while (digitalRead(openSwitch) == LOW ){
     //Serial.println("switch is open");
     moveout();
-      delay(750);
+      //delay(750);
   }
     if(digitalRead(openSwitch) == HIGH) {
     blinkCommand();
@@ -104,7 +104,7 @@ pinMode(openSwitch,INPUT_PULLUP);
 
 
 shutterServo.attach(11); //set pin for servo control
-//shutterServo.writeMicroseconds(1500);
+shutterServo.writeMicroseconds(1500);
 blinkCommand();
 //starts I2C and sets speed at 400kHz
   Wire.begin();
